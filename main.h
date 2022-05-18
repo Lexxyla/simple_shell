@@ -1,5 +1,5 @@
-#ifndef _MAIN_H_
-#define _MAIN_H_
+#ifndef  _MAIN_H_
+#define  _MAIN_H_
 
 #include <stdio.h>
 #include <unistd.h>
@@ -48,6 +48,9 @@ typedef struct data
  * Description: single linked list to store separators
  */
 typedef struct sep_list_s
+{
+	char separator;
+	struct sep_list_s *next;
 } sep_list;
 
 /**
@@ -95,9 +98,6 @@ void free_sep_list(sep_list **head);
 line_list *add_line_node_end(line_list **head, char *line);
 void free_line_list(line_list **head);
 
-/* aux_lists2.c */
-r_var *add_rvar_node(r_var **head, int lvar, char *var, int lval);
-void free_rvar_list(r_var **head);
 /* aux_lists2.c */
 r_var *add_rvar_node(r_var **head, int lvar, char *var, int lval);
 void free_rvar_list(r_var **head);
